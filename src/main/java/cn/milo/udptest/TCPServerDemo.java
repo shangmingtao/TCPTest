@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class TCPServerDemo {
 
-	Logger log = Logger.getLogger(TCPServerDemo.class);
+	static Logger log = Logger.getLogger(TCPServerDemo.class);
 	  	private ServerSocket serverSocket;
 		private DataInputStream dataInputStream;
 		private OutputStream os;
@@ -55,6 +55,7 @@ public class TCPServerDemo {
 	    public static void main(String[] args) {  
 	        // TODO Auto-generated method stub  
 	        TCPServerDemo server = new TCPServerDemo();    
-	        server.startServer();    
+	        server.startServer();
+	        log.info("server start success");
 	    }  
 }
