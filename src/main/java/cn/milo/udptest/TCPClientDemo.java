@@ -19,12 +19,15 @@ public class TCPClientDemo {
 		  OutputStream os = sck.getOutputStream();   //输出流
 
 		  Scanner sc = new Scanner(System.in);
+
+		  new Thread(new TCPClientRecv(sck)).start();
+
 		  while(true){
 			  String input = sc.nextLine();
 			  if(!input.equals("end")){
 				 os.write((input+"\r\n").getBytes());
 //				  os.flush();
-				  System.out.println(input);
+//				  System.out.println(input);
 			  }else{
 				  break;
 			  }

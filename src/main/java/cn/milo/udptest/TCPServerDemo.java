@@ -1,12 +1,14 @@
 package cn.milo.udptest;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TCPServerDemo {
+
+	Logger log = Logger.getLogger(TCPServerDemo.class);
 	  	private ServerSocket serverSocket;
 		private DataInputStream dataInputStream;
 		private OutputStream os;
@@ -34,7 +36,7 @@ public class TCPServerDemo {
 
 	    public void send(String message) throws IOException {
 			os=socket.getOutputStream();   //输出流
-			os.write(message.getBytes());
+			os.write(("recv your "+message+"\r\n").getBytes());
 		}
 	        
 	    private void GetMessageFromClient(){    
@@ -42,7 +44,7 @@ public class TCPServerDemo {
 				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String s;
 				while ((s = in.readLine()) != null) {
-					System.out.println("收到消息 : " + s);
+					log.info("[recv client message] = " + s);
 					this.send(s);
 				}
 	        } catch (IOException e) {
