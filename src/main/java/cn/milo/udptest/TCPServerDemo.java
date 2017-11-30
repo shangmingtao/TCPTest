@@ -16,7 +16,7 @@ public class TCPServerDemo {
 
 	    public void startServer(){
 	        try {
-	            serverSocket = new ServerSocket(4444);
+	            serverSocket = new ServerSocket(8888);
 	            socket = serverSocket.accept();    
 	            GetMessageFromClient();
 	        } catch (IOException e) {    

@@ -10,8 +10,8 @@ public class TCPClientDemo {
 	  public static void main(String[] args) throws UnknownHostException, IOException {
 		  // TODO Auto-generated method stub
 		  //1.建立TCP连接
-//		  String ip = "127.0.0.1";
-		  String ip = "118.212.149.51";   //服务器端ip地址
+		  String ip = "127.0.0.1";
+//		  String ip = "118.212.149.51";   //服务器端ip地址
 		  int port = 4444;        //端口号
 		  Socket sck = new Socket(ip, port);
 		  //2.传输内容
