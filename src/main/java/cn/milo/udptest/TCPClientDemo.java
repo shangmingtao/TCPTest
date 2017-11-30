@@ -16,7 +16,7 @@ public class TCPClientDemo {
 		  Socket sck = new Socket(ip, port);
 		  //2.传输内容
 		  String content = "ping";
-		  byte[] bstream = content.getBytes("UTF8");  //转化为字节流
+		  byte[] bstream = content.getBytes("UTF8");  //转化为字节流1
 		  OutputStream os = sck.getOutputStream();   //输出流
 
 		  Scanner sc = new Scanner(System.in);
