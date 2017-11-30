@@ -53,9 +53,10 @@ public class TCPServerDemo {
 	        }    
 	    }    
 	    public static void main(String[] args) {  
-	        // TODO Auto-generated method stub  
-	        TCPServerDemo server = new TCPServerDemo();    
-	        server.startServer();
-	        log.info("server start success");
-	    }  
+	        // TODO Auto-generated method stub
+			while(true){
+	        	TCPServerDemo server = new TCPServerDemo();
+	        	server.startServer();
+			}
+	    }
 }
