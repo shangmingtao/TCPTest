@@ -16,7 +16,8 @@ public class TCPClientDemo {
 		  String ip = "118.212.149.51";   //服务器端ip地址
 		  int port = 8888;        //端口号
 		  Socket sck = new Socket(ip, port);
-		  //2.传输内容
+		  sck.setKeepAlive(true);
+		  //2.传输内容sck
 		  String content = "ping";
 		  byte[] bstream = content.getBytes("UTF8");  //转化为字节流1
 		  OutputStream os = sck.getOutputStream();   //输出流
@@ -31,7 +32,7 @@ public class TCPClientDemo {
 				  while(true){
 					  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 输出北京时间
 					  String data = sdf.format(new Date());
-					  os.write((data+"\r\n").getBytes());
+					  os.write(("PING\r\n").getBytes());
 					  Thread.currentThread().sleep(3000);
 				  }
 			  }else{

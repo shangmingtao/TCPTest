@@ -36,7 +36,7 @@ public class TCPServerDemo {
 
 	    public void send(String message) throws IOException {
 			os=socket.getOutputStream();   //输出流
-			os.write(("recv your "+message+"\r\n").getBytes());
+			os.write(("PONG\r\n").getBytes());
 		}
 	        
 	    private void GetMessageFromClient(){    
