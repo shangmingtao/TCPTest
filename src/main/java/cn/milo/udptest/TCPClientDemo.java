@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class TCPClientDemo {
-	  public static void main(String[] args) throws UnknownHostException, IOException {
+	  public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
 		  // TODO Auto-generated method stub
 		  //1.建立TCP连接
 //		  String ip = "127.0.0.1";
@@ -26,14 +28,17 @@ public class TCPClientDemo {
 		  while(true){
 			  String input = sc.nextLine();
 			  if(!input.equals("end")){
-				 os.write((input+"\r\n").getBytes());
-//				  os.flush();
-//				  System.out.println(input);
+				  while(true){
+					  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 输出北京时间
+					  String data = sdf.format(new Date());
+					  os.write((data+"\r\n").getBytes());
+					  Thread.currentThread().sleep(3000);
+				  }
 			  }else{
 				  break;
 			  }
 		  }
-		  //3.关闭连接
+//		  3.关闭连接
 		  sck.close();
 	  }
 }
