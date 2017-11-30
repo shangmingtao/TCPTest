@@ -75,7 +75,7 @@
           <archive>
             <manifest>
               <mainClass>
-                cn.milo.udptest.TCPClientDemo
+                cn.milo.udptest.TCPServerDemo
               </mainClass>
               <!-- 下边两个配置很重要,目的是配置 MANIFEST.MF 中的Class-Path: ,如果不配置,我们的jar包还是找不到上一步lib目录下的依赖. -->
               <addClasspath>true</addClasspath>
